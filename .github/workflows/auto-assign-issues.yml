@@ -19,3 +19,5 @@ jobs:
         run: docker version
       - name: Print maven Version
         run: mvn --version
+      - name: Print maven Version
+        run: aws --version
