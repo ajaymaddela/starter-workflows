@@ -17,4 +17,5 @@ jobs:
 
       - name: Print Docker Version
         run: docker version
-
+      - name: Print maven Version
+        run: mvn --version
