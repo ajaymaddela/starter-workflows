@@ -1,15 +1,19 @@
-name: Issue assignment
+name: Check Docker Compose Version
 
 on:
-    issues:
-        types: [opened]
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
-    auto-assign:
-        runs-on: ubuntu-latest
-        steps:
-            - name: 'Auto-assign issue'
-              uses: pozil/auto-assign-issue@v1.11.0
-              with:
-                  assignees: phantsure,tiwarishub,anuragc617,vsvipul,bishal-pdmsft
-                  numOfAssignee: 1
+  check-docker-compose-version:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Verify Docker Compose version
+        run: docker compose version
+
+      - name: Print Docker Version
+        run: docker version
+
