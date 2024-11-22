@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: List Repository Contents
+        run: ls -R
       - name: Verify Docker Compose version
         run: docker compose version
 
