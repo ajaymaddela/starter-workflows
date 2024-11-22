@@ -26,7 +26,13 @@ jobs:
         run: mvn --version
       - name: Print maven Version
         run: aws --version
-      - name: run docker compose
-        working-directory: docker
-        run: |
-          docker compose up -d
+      - name: Make Script Executable
+        run: chmod +x docker/start.sh
+
+      - name: Run Docker Compose Script
+        run: ./docker/start.sh
+
+      # - name: run docker compose
+      #   working-directory: docker
+      #   run: |
+      #     docker compose up -d
