@@ -26,6 +26,7 @@ jobs:
         run: mvn --version
       - name: Print maven Version
         run: aws --version
+        
       - name: Make Script Executable
         run: chmod +x docker/start.sh
 
